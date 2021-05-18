@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Poster</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+    <script src="script.js"></script>
+    <body style= "border:10px double red; padding:15px">
+    <b><center><h1> Poster Header </h1></center></b>
+    <h3><center> Subheader Text</center></h3>
+    <marquee>MOVING TEXT MOVING TEXT MOVING TEXT MOVING TEXT MOVING TEXT MOVING TEXT MOVING TEXT MOVING TEXT </marquee>
+    <a href="https://www.allrecipes.com/recipe/245286/eggnog-fried-chicken/"> Click here! </a>
+    <center><h3> Subheader Text #2/Contact Info </h3></center>
+
+  </body>
+</html>
