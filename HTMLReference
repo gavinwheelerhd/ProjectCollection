@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title> Reference </title>
+    </head>
+    <body>
+      <strong> Strong </strong>
+      <br />  <br />
+      <b> Bold </b>
+      <br /> <br />
+      <u> Underline </u>
+      <br />  <br />
+      <i> Italicize </i>
+      <br />  <br />
+      <marquee> Marquee </marquee>
+      <h1> Heading 1 </h1>
+      <h2> Heading 2 </h2>
+      <h3> Heading 3 </h3>
+      <h4> Heading 4 </h4>
+      <h5> Heading 5 </h5>
+      <h6> Heading 6 </h6>
+      <hr>           </hr>
+      <p> Paragraph </p>
+      <small> Small </small>
+      <br />  <br />
+      <mark> Mark </mark>
+      <!-- Comment -->
+      <ol> Ordered List 
+        <li> List 1 </li>
+         <br />
+        <li> List 2 </li>
+         <br />
+        <li> List 3 </li>
+         <br />
+      </ol>
+      <ul> Unordered List
+        <li> List 1 </li>
+         <br />
+        <li> List 2 </li>
+         <br />
+        <li> List 3 </li>
+         <br />
+      </ul>
+   <table border="1">
+     <tr>
+       <th> 123 </th>
+       <th> 456 </th>
+       </tr>
+      <tr>
+       <td> 123 </td>
+         <td> 456 </td>
+         </table>
+        <br />
+         <center><img src="http://www.dictionary.com/e/wp-content/uploads/2018/07/yeet1.jpg" height="250px" /></center>
+         <br />
+         <marquee behavior="scroll" direction="up" scrollamount="100" >
+         <img src="YootFish.jpg" height="150px" />
+        </marquee>
+         <a href="https://imageproxy.ifcdn.com/crop:x-20,resize:320x,crop:x800,quality:90x75/images/3272188606dd1fc32aedda25f287a64a255da64422454717f143f21ef9e35c9b_1.jpg"> Click Here For Image </a>
+        <br />
+         <a href="skeleton.html" > To Skeleton </a>
+    </body>
+  </html>
