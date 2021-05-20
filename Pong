@@ -1,0 +1,164 @@
+//HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pong</title>
+    <link href="pong.html" type="html" />
+    <link href="gameOverP1.html" type="html" />
+    <link href="gameOverP2.html" type="html" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+    <script src="index.js"></script>
+  </head>
+<body>
+  <h1 id="title"> Pong </h1>
+  <h3 id="subtitle"> First to 10. 
+    <br />
+    Left paddle is W/S, Right paddle is UP/DOWN arrow.
+  </h3>
+  <center><button id="play" onclick="clickButton()">Play</button></center>
+  <div id="menu"></div>
+  
+  
+  //CSS
+  body {
+   background-color: lightblue;
+}
+
+#target {
+  background: skyblue;
+  margin: auto;
+}
+
+#title {
+  font-size: 125px;
+  text-align: center;
+  margin-top: 200px;
+  color:salmon;
+}
+
+#subtitle {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  color:salmon;
+}
+
+#play {
+  font-size: 30px;
+  text-align: center; 
+  background-color: lightblue; 
+  color: black;
+  border-color: black;
+  padding: 10px;
+  border-style: solid;
+  margin: auto;
+}
+
+.over {
+  font-size: 125px;
+  text-align: center;
+  margin-top: 200px;
+  color:salmon;
+}
+.retry {
+  font-size: 50px;
+  text-align: center; 
+  color: black;
+}
+
+//JavaScript
+
+function start() {
+  //alert("Loading Ball");
+
+  sjs.open("target", 750, 750);
+  
+  //create ball object
+  var ball = new sjs.Image("Pong/Images/pizza.png");
+  ball.type = "ball";
+  ball.setSize(30,30);
+  ball.center();
+  ball.pushUp(7);
+  ball.pushRight(7);
+  ball.bounce();
+  ball.friction = 0;
+
+
+  var paddleLeft = new sjs.Image("Pong/Images/pinkv.png");
+  paddleLeft.type = "paddle"
+  paddleLeft.centerH() .offset(-350, 20);
+  paddleLeft.friction = 0.2;
+
+  var paddleRight = new sjs.Image("Pong/Images/pinkv.png");
+  paddleRight.type = "paddle"
+  paddleRight.centerH().bottom().offset(325, -20);
+  paddleRight.friction = 0.2;
+
+  sjs.keyDown(W_KEY, function(){
+    paddleLeft.pushUp(5);
+  });
+
+  sjs.keyDown(S_KEY, function(){
+    paddleLeft.pushDown(5);
+  });
+
+sjs.keyDown(UP_KEY, function(){
+    paddleRight.pushUp(5);
+  });
+
+  sjs.keyDown(DOWN_KEY, function(){
+    paddleRight.pushDown(5);
+  });
+
+sjs.onHit("ball", "paddle", function(ball,paddle) {
+  hitSound.play();
+  sjs.bounceOff(ball,paddle);
+});
+
+var hitSound = new Audio("Pong/Music/techno.mp3");
+
+var score1 = 0
+var score2 = 0
+
+var score1Text = new sjs.Text("Player 1 : " + score1);
+var score2Text = new sjs.Text("Player 2 : " + score2);
+
+score2Text.right() .offset(-10,0);
+
+
+sjs.onHit("ball", "right_screen", function() {
+  score1 = score1 + 1;
+  score1Text.setText("Player 1: " + score1);
+  ball.center();
+  if (score1 >= 10) {
+window.location="gameOverP1.html";
+}
+});
+
+sjs.onHit("ball", "left_screen", function() {
+  score2 = score2 + 2;
+  score2Text.setText("Player 2: " + score2);
+  ball.center();
+  if (score2 >= 10) {
+window.location="gameOverP2.html";
+}
+});
+}
+
+//gameOver.html
+<link href="pong.html" type="html" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="index.js"></script>
+
+<h1 class="over">Game Over!</h1>
+<h1 class="over">Player 1 Wins!</h1>
+<center><button id="play" onclick="clickButton()">Play Again?</button></center>
+
+//Button function
+function clickButton() {
+    window.location = "pong.html";
+};
